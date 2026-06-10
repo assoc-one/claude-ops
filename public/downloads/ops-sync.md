@@ -22,7 +22,7 @@ Runs as a scheduled Cowork task on the Linear + GitHub connectors.
 1. **Enumerate** skills and tasks on the Claude side and the corresponding directories in claude-ops.
 2. **Compare** content, normalising whitespace before diffing.
 3. **In repo, stale or missing in Claude** → repo wins: update the Claude-side copy where the surface allows writes; where it doesn't (e.g. plugin-bundled skills), produce the updated artefact and flag it for one-click reinstall.
-4. **In Claude, missing from repo** → the dangerous case for the web page: never silently commit. Raise a ticket (or comment on the run report) listing the uncommitted artefact for Aled to review and commit.
+4. **In Claude, missing from repo** → the dangerous case for the web page: never silently commit. Call `issue-capture` to file a Backlog ticket in os.Claude flagging the uncommitted artefact for Aled to review and commit.
 5. **Edited on both sides** → conflict: do not overwrite. Flag to Aled with a diff.
 6. **Report** — end every run with a short parity report: in-sync count, synced items, flagged items.
 
