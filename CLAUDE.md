@@ -18,6 +18,7 @@ Skills live in `.claude/skills/`. Claude Code discovers and loads them automatic
 | `operating-model` | Contextual reference: what a skill / task / routine / agent is, how they bundle, the loop topology, and the skill-or-task decision test. Read-only canon — no trigger or behaviour loop. |
 | `pm-plan` | Prioritisation and focus: reads goal-initiatives and ticket state across delivery teams, separates important from urgent, makes autonomous hygiene writes (fix/minor level), surfaces major proposals for Aled. Runs ~weekly on the Linear connector. Never marks Done, never writes code, never touches Pipeline. |
 | `delivery-loop` | Driver routine: sequences exec → qa-review → route → pm-merge in one session, with a 2-strike QA bounce cap. Replaces the three separate timer routines. Run as the single delivery loop timer. |
+| `optimisation-review` | Weekly review skill with two passes — tooling (are we using Claude, Linear, GitHub, Vercel, Sanity well?) and workflow (does the operating shape match the skill-vs-task test?). Raises proposals into os.Claude Backlog. Read-only to canon; human-gated. |
 
 ## Source of truth
 
