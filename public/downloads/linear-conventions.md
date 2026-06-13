@@ -83,7 +83,7 @@ Every ticket should carry the labels that classify it. The taxonomy:
 
 **Executor** (who does it): one label from the `agent` group (single-select).
 
-* `agent` **group (single-select)** — which agent owns the work. The former `exec:agent:*` and `author:claude-code` labels were retired (2026-06-02); `exec:human` was retired (2026-06-10) — all folded into this one group:
+* `agent` **group (single-select)** — which agent owns the work. The former `exec:agent:*`, `author:claude-code`, and human-executor labels were retired (2026-06-02–2026-06-10) and folded into this one group:
   * `agent:cc-pm`, `agent:cc-exec`, `agent:cc-qa` — the three Claude Code roles in the PM -> exec -> QA loop (see *Agent routing* below)
   * `agent:human` — decisions, design, launch ops, anything human-owned. Also set by exec and pm-merge on the Blocked/CI-fail path (evicts the active agent label)
   * `agent:claude` — claude.ai work that needs an MCP the CLI lacks (e.g. Figma)
@@ -209,7 +209,7 @@ A ticket that mixes executor types or requires more than one human gate at diffe
 
 **The two rules (new tickets only — no retroactive sweep of open mixed tickets):**
 
-1. **Split human-owned setup from agent implementation.** A discrete human-owned prerequisite (account creation, credential provisioning, a design or launch decision) becomes its own `exec:human` ticket, marked as blocking the implementation ticket.
+1. **Split human-owned setup from agent implementation.** A discrete human-owned prerequisite (account creation, credential provisioning, a design or launch decision) becomes its own `agent:human` ticket, marked as blocking the implementation ticket.
 2. **One human gate per ticket.** If a ticket needs more than one human gate at different stages (provision-then-build, or build-then-approve-a-production-migration), split so each ticket has a single gate. A production data migration in particular gets its own ticket.
 
 **Trivial-enough threshold — leave bundled only when all three hold:**
