@@ -21,7 +21,7 @@ Given a problem description:
    - **Proposed change** — the specific edit and exactly which skill/file/section it touches. Embed acceptance criteria (Pattern A) where the fix is a coded change with a clear scope.
    - **Notes for Aled** — any open questions or decisions needed.
    - **On completion** — "Refine with the answers above, then move to Todo."
-   - Labels: `type:task` (or `type:bug`) + `work:configuration`. Executor: `agent:cc-exec` for a clean coded change with Pattern A criteria embedded; `exec:human` otherwise.
+   - Labels: `type:task` (or `type:bug`) + `work:configuration`. Executor: `agent:cc-exec` for a clean coded change with Pattern A criteria embedded; `agent:human` otherwise.
    - State: Backlog. Assign Aled.
 
 ## Guardrails
