@@ -15,7 +15,7 @@ A run is **not** a single ticket. It works the eligible `cc-exec` queue **serial
 
 **Eligibility scan.** Before each claim — the first and every subsequent one in the run — scan candidates from highest priority downward:
 
-- A ticket is **eligible** if it is a **leaf ticket** (never `type:epic` — epics are outcomes, closed by Aled when their children are done; see linear-conventions *Structure*), has no open blocked-by relation (blocker ticket not Done or Canceled), and has no unmet dependency named in a PM comment.
+- A ticket is **eligible** if it is a **leaf ticket** (never `type:epic` — epics are outcomes, closed by Aled when their children are done; see linear-conventions *Structure*), has no open blocked-by relation (blocker ticket not Done or Canceled), has no unmet dependency named in a PM comment, and has no existing `claude/<ticket-id-lowercase>` branch in the target repo (a branch indicates a previous or concurrent exec session has already claimed it — skip to prevent duplicate PRs).
 - If the top ticket is ineligible, move down the priority list rather than ending the run.
 - If no eligible ticket exists, end the run cleanly with no claim. Do not mark anything Blocked.
 
